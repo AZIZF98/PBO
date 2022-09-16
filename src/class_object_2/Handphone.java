@@ -37,6 +37,4 @@ public class Handphone {
     public String getKapasitas() {
         return this.kapasitas;
     }
-    
-    
 }

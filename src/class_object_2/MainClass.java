@@ -47,8 +47,5 @@ public class MainClass {
         }catch (Exception e){
             System.out.println("INPUTAN ANDA SALAH KAPRAH");
         }
-        
-    
-    
     }
 }
