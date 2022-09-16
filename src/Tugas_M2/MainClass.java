@@ -55,6 +55,14 @@ public class MainClass {
                        orang.setNama(br.readLine());
                        System.out.println("Masukkan Alamat :");
                        orang.setAlamat(br.readLine());
+                       System.out.println("Masukkan NIK:");
+                       B.setNik(br.readLine());
+                       System.out.println("Masukkan Bagian:");
+                       B.setBagian(br.readLine());
+                       System.out.println("Jumlah kehadiran:");
+                       B.setKehadiran(Integer.parseInt(br.readLine()));
+                       System.out.println("Gaji per Hari:");
+                       B.setGaji_per_hari(Integer.parseInt(br.readLine()));
                        
                        
                        System.out.println("=======PRINT========");
@@ -67,6 +75,7 @@ public class MainClass {
                        System.out.println("Total Gaji   :"+B.getGaji());
                    break;
                    case 3 :
+                       System.exit(0);
                    break;
                }
             }while(true);

@@ -18,8 +18,7 @@ public class Undika {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-
-    
+  //////////////////////////////////////
     public String getNama() {
         return nama;
     }

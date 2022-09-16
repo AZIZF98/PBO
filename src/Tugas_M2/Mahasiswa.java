@@ -11,7 +11,7 @@ package Tugas_M2;
 public class Mahasiswa {
 
     private String nim, prodi;
-    private int spp, angkatan, semester, bayar_spp_semester,getAngkatan;
+    private int spp, angkatan, semester, bayar_spp_semester;
 
     //SETTER
     public void setNim(String nim) {

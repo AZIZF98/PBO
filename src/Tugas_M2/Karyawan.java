@@ -56,6 +56,7 @@ public class Karyawan {
         return totalGaji;
     }
     
+///////////////////////////////////////////////////////
     public int getGaji() {
         int Gaji = getKehadiran() * getGaji_per_hari();
         return Gaji;
