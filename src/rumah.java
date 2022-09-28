@@ -29,9 +29,7 @@ public class rumah {
         this.harga = h;
     }
 
-    
-    
-    
+    ////////////////////////////////////////////    
     public int getTingkat() {
         return tingkat;
     }
@@ -44,20 +42,28 @@ public class rumah {
         return harga;
     }
     
-
     public int getBeli(){
         int total = getTingkat() * getHarga();
         return total;
 }
-    
+    /////////////////////////////////////////////
     public static void main(String[] args) {
         
         rumah A = new rumah("",0,0);
-        
+        rumah B = new rumah("",0,0);
+        ///////////////////
         A.setWarna("Merah");
         A.setTingkat(2);
-        A.setHarga(1000000);
+        A.setHarga(75000000);
         
-        System.out.println("Total Harga Rumah " + A.getBeli());
+        ///////////////////
+        B.setWarna("Biru");
+        B.setTingkat(1);
+        B.setHarga(50000000);
+        
+        System.out.println("Daftar Harga Rumah : "); 
+        System.out.println("Harga Rumah 1 " + A.getBeli());
+        System.out.println("Harga Rumah 2 " + B.getBeli());
+        
 }
 }
