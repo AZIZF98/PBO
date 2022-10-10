@@ -9,7 +9,8 @@ package Tugas_M4;
  * @author LENOVO
  */
 public class Lion_air extends Tiket {
-    int jumlahpenumpang, harga;
+
+    int jumlahpenumpang, harga, total;
     String kotatujuan, nopesawat, nokursi;
 
     public Lion_air(int jumlahpenumpang, int harga, String kotatujuan, String nopesawat, String nokursi, String bookingID, String nik, String nama, String jenis_kelamin, String tglberangkat, String tglkembali, String kotaasal) {
@@ -25,10 +26,6 @@ public class Lion_air extends Tiket {
         return jumlahpenumpang;
     }
 
-    public int getHarga() {
-        return harga;
-    }
-
     public String getKotatujuan() {
         return kotatujuan;
     }
@@ -40,9 +37,31 @@ public class Lion_air extends Tiket {
     public String getNokursi() {
         return nokursi;
     }
-    
-    public int getTotal() {
+
+    public int getHarga() {
+        if (getKotaasal().equalsIgnoreCase("Surabaya")) {
+            if (getKotatujuan().equalsIgnoreCase("Bali") || getKotatujuan().equalsIgnoreCase("Lombok")) {
+                harga = 500000;
+            } else if (getKotatujuan().equalsIgnoreCase("Jakarta") || getKotatujuan().equalsIgnoreCase("Yogyakarta")) {
+                harga = 600000;
+            } else if (getKotatujuan().equalsIgnoreCase("Balikpapan") || getKotatujuan().equalsIgnoreCase("Makassar")) {
+                harga = 700000;
+            }
+        } else if (getKotaasal().equalsIgnoreCase("Jakarta")) {
+            if (getKotatujuan().equalsIgnoreCase("Bali") || getKotatujuan().equalsIgnoreCase("Lombok")) {
+                harga = 700000;
+            } else if (getKotatujuan().equalsIgnoreCase("Surabaya") || getKotatujuan().equalsIgnoreCase("Yogyakarta")) {
+                harga = 750000;
+            } else if (getKotatujuan().equalsIgnoreCase("Balikpapan") || getKotatujuan().equalsIgnoreCase("Makassar")) {
+                harga = 800000;
+            }
+        }
         return harga;
     }
-    
+
+    public int getTotal() {
+        total = getHarga() * getJumlahpenumpang();
+        return total;
+    }
+
 }
