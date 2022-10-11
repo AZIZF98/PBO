@@ -13,7 +13,7 @@ public class Lion_air extends Tiket {
     int jumlahpenumpang, harga, total;
     String kotatujuan, nopesawat, nokursi;
 
-    public Lion_air(int jumlahpenumpang, int harga, String kotatujuan, String nopesawat, String nokursi, String bookingID, String nik, String nama, String jenis_kelamin, String tglberangkat, String tglkembali, String kotaasal) {
+    public Lion_air(String bookingID, String nik, String nama, String jenis_kelamin, String tglberangkat, String tglkembali, String kotaasal,String kotatujuan, String nopesawat, String nokursi,int jumlahpenumpang) {
         super(bookingID, nik, nama, jenis_kelamin, tglberangkat, tglkembali, kotaasal);
         this.jumlahpenumpang = jumlahpenumpang;
         this.harga = harga;
