@@ -1,27 +1,36 @@
 package Tugas_M4;
+
 import java.io.*;
 
 import java.io.IOException;
 
-public class Main{
+public class Main {
 
-   
     public static void main(String[] args) throws IOException {
         BufferedReader h = new BufferedReader(new InputStreamReader(System.in));
         String lagi, tglkem = "";
         int total = 0;
-        
-        try{
-            do{
-         System.out.println("Pemesanan Tiket");
+        String tujuan;
+
+        try {
+            do {
+                System.out.println("Travel");
                 System.out.print("Masukkan jumlah penumpang : ");
                 int jml = Integer.parseInt(h.readLine());
                 System.out.print("Kota Asal : ");
                 String asal = h.readLine();
-                System.out.println("Pilih rute tujuan");
-                System.out.println("Bali, Lombok, Surabaya, Yogyakarta, Balikpapan, Makassar, Jakarta");
-                System.out.print("Tujuan : ");
-                String tujuan = h.readLine();
+                if (asal.equalsIgnoreCase("Surabaya")) {
+                    System.out.println("Pilih rute tujuan");
+                    System.out.println("Bali, Lombok, Yogyakarta, Balikpapan, Makassar, Jakarta");
+                    System.out.print("Tujuan : ");
+                    tujuan = h.readLine();
+                } else {
+                    System.out.println("Pilih rute tujuan");
+                    System.out.println("Bali, Lombok, Surabaya, Yogyakarta, Balikpapan, Makassar");
+                    System.out.print("Tujuan : ");
+                    tujuan = h.readLine();
+                }
+
                 System.out.print("Isi tanggal berangkat : ");
                 String tglber = h.readLine();
                 System.out.print("Pesan pulang pergi (Ya/No) : ");
@@ -29,17 +38,17 @@ public class Main{
                 if (pp.equalsIgnoreCase("Ya")) {
                     System.out.print("Tanggal Kembali: ");
                     tglkem = h.readLine();
-                    }
+                }
                 System.out.println("-- Pilih Maskapai --");
                 System.out.println("1. Lion Air 2. Citilink");
                 System.out.print("Pilih maskapai : ");
                 int tipe = Integer.parseInt(h.readLine());
-                        
-                switch (tipe){
+
+                switch (tipe) {
                     case 1:
                         Lion_air pesawat1[] = new Lion_air[jml];
                         System.out.println("-- Selamat Datang di Maskapai Lion Air --");
-                        for(int p = 0; p<pesawat1.length;p++){
+                        for (int p = 0; p < pesawat1.length; p++) {
                             System.out.println("Silahkan isi data penumpang");
                             System.out.print("Booking ID : ");
                             String bookingID = h.readLine();
@@ -53,10 +62,10 @@ public class Main{
                             String nopes = h.readLine();
                             System.out.print("No Kursi : ");
                             String nokur = h.readLine();
-                            pesawat1[p] = new Lion_air(bookingID,nik,nama ,jkel,tglber,tglkem,asal,tujuan,nopes,nokur,jml);
+                            pesawat1[p] = new Lion_air(bookingID, nik, nama, jkel, tglber, tglkem, asal, tujuan, nopes, nokur, jml);
                             System.out.println("");
                         }
-                        for (int p=0; p<pesawat1.length; ++p) {
+                        for (int p = 0; p < pesawat1.length; ++p) {
                             System.out.println("-- Preview Tiket Lion Air --");
                             System.out.println("");
                             System.out.println("Booking ID : " + pesawat1[p].getBookingID());
@@ -72,11 +81,11 @@ public class Main{
                             total = pesawat1[p].getTotal();
                         }
                         System.out.println("Total : " + total);
-                    break;                       
+                        break;
                     case 2:
-                        Citilink pesawat2[]= new Citilink[jml]; 
+                        Citilink pesawat2[] = new Citilink[jml];
                         System.out.println("-- Selamat Datang di Maskapai Lion Air --");
-                        for(int p = 0; p<pesawat2.length;p++){
+                        for (int p = 0; p < pesawat2.length; p++) {
                             System.out.println("Silahkan isi data penumpang");
                             System.out.print("Booking ID : ");
                             String bookingID = h.readLine();
@@ -90,10 +99,10 @@ public class Main{
                             String nopes = h.readLine();
                             System.out.print("No Kursi : ");
                             String nokur = h.readLine();
-                            pesawat2[p] = new Citilink(bookingID,nik,nama,jeniskel,tglber,tglkem,asal,tujuan,nopes,nokur,jml);
+                            pesawat2[p] = new Citilink(bookingID, nik, nama, jeniskel, tglber, tglkem, asal, tujuan, nopes, nokur, jml);
                             System.out.println("");
                         }
-                        for (int p=0; p<pesawat2.length; ++p) {
+                        for (int p = 0; p < pesawat2.length; ++p) {
                             System.out.println("-- Preview Tiket Lion Air --");
                             System.out.println("");
                             System.out.println("Booking ID : " + pesawat2[p].getBookingID());
@@ -109,14 +118,13 @@ public class Main{
                             total = pesawat2[p].getTotal();
                         }
                         System.out.println("Total : " + total);
-                    break;
+                        break;
                 }
                 System.out.print("\nPesan Lagi (Ya/No): ");
                 lagi = h.readLine();
-            }while(lagi.equalsIgnoreCase("y"));
-        } catch (Exception e){
+            } while (lagi.equalsIgnoreCase("Ya"));
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 }
-        
