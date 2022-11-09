@@ -1,2 +1,2 @@
 # Class_object
-Membuat class object
+//INI ADALAH MATERI TENTANG PEMROGAMAN BERBASIS OBJEK DI JAVA//
